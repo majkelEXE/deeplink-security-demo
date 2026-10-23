@@ -2,11 +2,13 @@ package com.example.victimapp;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.webkit.JsResult;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -33,10 +35,22 @@ public class XssActivity extends AppCompatActivity {
         });
 
         WebView webView = findViewById(R.id.webview);
-        // VULNERABILITY (WebView XSS): JavaScript is enabled and a WebChromeClient is set,
-        // so an injected onerror/alert() handler actually runs and can show dialogs.
+        // VULNERABILITY (WebView XSS): JavaScript is enabled, so an injected onerror
+        // handler runs. onJsAlert is overridden so the injected alert() is actually
+        // displayed (the base WebChromeClient does not show a dialog on every WebView).
         webView.getSettings().setJavaScriptEnabled(true);
-        webView.setWebChromeClient(new WebChromeClient());
+        webView.setWebChromeClient(new WebChromeClient() {
+            @Override
+            public boolean onJsAlert(WebView view, String url, String message, JsResult result) {
+                new AlertDialog.Builder(XssActivity.this)
+                        .setTitle("victim.example")
+                        .setMessage(message)
+                        .setCancelable(false)
+                        .setPositiveButton(android.R.string.ok, (d, w) -> result.confirm())
+                        .show();
+                return true;
+            }
+        });
 
         String name = null;
         if (getIntent().getData() != null) {
@@ -57,7 +71,9 @@ public class XssActivity extends AppCompatActivity {
         }
 
         // Local render only; the base URL just gives the page an https-like origin.
-        webView.loadDataWithBaseURL("https://victim.local/", html, "text/html", "UTF-8", null);
+        // Uses a reserved .example host so the injected <img src=x> fails DNS fast
+        // (avoids the slow mDNS lookup of a .local host before onerror fires).
+        webView.loadDataWithBaseURL("https://victim.example/", html, "text/html", "UTF-8", null);
     }
 
     private String readAsset(String fileName) throws IOException {

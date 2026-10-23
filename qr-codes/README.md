@@ -23,13 +23,14 @@ i strony awaryjnej.
 | `qr_webview_xss.png` | `victimapp://xss?name=<payload XSS>` (lokalny, zakodowany) |
 | `qr_hijacking.png` | `victimapp://reset/confirm?token=DEMO_RESET_TOKEN_123` |
 | `qr_secure_app_link.png` | `<DEMO_BASE_URL>/secure` |
-| `qr_demo_links.png` | `<DEMO_BASE_URL>/demo-links` (strona awaryjna z klikalnymi linkami) |
+| `qr_demo_links.png` | `<DEMO_BASE_URL>/` (strona główna — wszystkie ataki z przyciskami „Zobacz demo") |
 
 Kody `auth_bypass`, `webview_xss` i `hijacking` nie zależą od domeny.
 
 ## Wariant awaryjny
 
-Gdy aparat nie otwiera własnych schematów URI, użyj strony `<DEMO_BASE_URL>/demo-links`
+Gdy aparat nie otwiera własnych schematów URI, otwórz stronę główną `<DEMO_BASE_URL>/`
+i użyj przycisków „Zobacz demo"
 (projekt `demo-site`) — ma klikalne linki `victimapp://` oraz polecenia `adb`.
 
 ## Poza zakresem (na później)

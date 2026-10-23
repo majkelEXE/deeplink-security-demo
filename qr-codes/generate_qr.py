@@ -40,7 +40,7 @@ def build_targets(base_url):
         "qr_webview_xss": "victimapp://xss?" + urlencode({"name": XSS_PAYLOAD}, quote_via=quote),
         "qr_hijacking": "victimapp://reset/confirm?" + urlencode({"token": "DEMO_RESET_TOKEN_123"}, quote_via=quote),
         "qr_secure_app_link": f"{base_url}/secure",
-        "qr_demo_links": f"{base_url}/demo-links",
+        "qr_demo_links": base_url,
         "qr_victimapp_apk": f"https://github.com/{GITHUB_REPO}/releases/download/{RELEASE_TAG}/VictimApp.apk",
         "qr_attackerapp_apk": f"https://github.com/{GITHUB_REPO}/releases/download/{RELEASE_TAG}/AttackerApp.apk",
     }

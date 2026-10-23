@@ -45,4 +45,8 @@
     <string name="redirect_no_url">Brak parametru „url" w linku.</string>
     <string name="redirect_no_app">Brak aplikacji do otwarcia tego adresu.</string>
     <string name="redirect_note">To jest Open Redirect: złośliwy link może wysłać użytkownika na dowolną stronę, np. phishing.</string>
+
+    <!-- XSS screen (WebView XSS) -->
+    <string name="xss_default_name">Gość</string>
+    <string name="xss_template_error">Nie udało się wczytać szablonu profilu.</string>
 </resources>

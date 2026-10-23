@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Profil</title>
+    <style>
+        body { font-family: sans-serif; margin: 0; padding: 24px; background: #f7f8fa; color: #1a1a1a; }
+        h1 { font-size: 22px; margin: 0 0 16px; }
+        .card { background: #fff; border-radius: 12px; padding: 16px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+        .label { margin: 0 0 4px; font-size: 13px; color: #5f6368; }
+        .value { margin: 0; font-size: 18px; }
+        #secret { font-family: monospace; color: #c62828; }
+    </style>
+</head>
+<body>
+    <h1>Profil użytkownika</h1>
+
+    <!-- Secret is placed BEFORE the injected name so an onerror payload can read it. -->
+    <div class="card">
+        <p class="label">Numer konta (dane wrażliwe):</p>
+        <p id="secret" class="value">PL00 1234 5678 9000 0000 TEST</p>
+    </div>
+
+    <div class="card">
+        <p class="label">Witaj:</p>
+        <p id="greeting" class="value">{{NAME}}</p>
+    </div>
+</body>
+</html>

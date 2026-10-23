@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Needed by WebView to load remote resources (e.g. the img src that triggers the XSS payload). -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -55,6 +58,22 @@
                 <data
                     android:scheme="victimapp"
                     android:host="redirect" />
+            </intent-filter>
+        </activity>
+
+        <!-- WebView XSS: injects victimapp://xss?name=... into a local HTML template. -->
+        <activity
+            android:name=".XssActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:scheme="victimapp"
+                    android:host="xss" />
             </intent-filter>
         </activity>
     </application>

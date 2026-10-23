@@ -106,10 +106,24 @@ body {
 .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
 
 section.attack {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
     scroll-margin-top: calc(var(--topbar-h) + 12px);
     padding: 40px 0;
     border-top: 1px solid var(--border);
 }
+
+.attack-icon {
+    width: 96px;
+    height: 96px;
+    flex-shrink: 0;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+.attack-body { flex: 1; min-width: 0; }
 
 section.attack h2 {
     font-family: "Dekko", cursive;

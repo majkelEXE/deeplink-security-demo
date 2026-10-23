@@ -32,31 +32,43 @@
 
     <main class="container">
         <section id="auth-bypass" class="attack">
-            <h2>Auth Bypass</h2>
-            <a class="btn" href="victimapp://account">Zobacz demo</a>
-            <p>Ekran chronionego konta otwierany linkiem <span class="mono">victimapp://account</span>
-                nie sprawdza sesji — pokazuje saldo i numer konta nawet po wylogowaniu.</p>
+            <img class="attack-icon" src="/pumpkin.jpeg" alt="">
+            <div class="attack-body">
+                <h2>Auth Bypass</h2>
+                <a class="btn" href="victimapp://account">Zobacz demo</a>
+                <p>Ekran chronionego konta otwierany linkiem <span class="mono">victimapp://account</span>
+                    nie sprawdza sesji — pokazuje saldo i numer konta nawet po wylogowaniu.</p>
+            </div>
         </section>
 
         <section id="open-redirect" class="attack">
-            <h2>Open Redirect</h2>
-            <a class="btn" href="victimapp://redirect?url=https%3A%2F%2Fdeeplink-security-demo.vercel.app%2Fphishing-demo">Zobacz demo</a>
-            <p>Link <span class="mono">victimapp://redirect?url=…</span> przekazuje dowolny adres do
-                przeglądarki bez walidacji — tak użytkownik trafia na podstawioną stronę logowania.</p>
+            <img class="attack-icon" src="/cat_guitarist.jpeg" alt="">
+            <div class="attack-body">
+                <h2>Open Redirect</h2>
+                <a class="btn" href="victimapp://redirect?url=https%3A%2F%2Fdeeplink-security-demo.vercel.app%2Fphishing-demo">Zobacz demo</a>
+                <p>Link <span class="mono">victimapp://redirect?url=…</span> przekazuje dowolny adres do
+                    przeglądarki bez walidacji — tak użytkownik trafia na podstawioną stronę logowania.</p>
+            </div>
         </section>
 
         <section id="webview-xss" class="attack">
-            <h2>WebView XSS</h2>
-            <a class="btn" href="victimapp://xss?name=%3Cimg%20src%3Dx%20onerror%3D%22alert(document.getElementById('secret').textContent)%22%3E">Zobacz demo</a>
-            <p>Parametr <span class="mono">name</span> jest wstrzykiwany do lokalnej strony bez kodowania,
-                więc skrypt z linku wykonuje się i odczytuje wrażliwe dane z WebView.</p>
+            <img class="attack-icon" src="/demon.jpeg" alt="">
+            <div class="attack-body">
+                <h2>WebView XSS</h2>
+                <a class="btn" href="victimapp://xss?name=%3Cimg%20src%3Dx%20onerror%3D%22alert(document.getElementById('secret').textContent)%22%3E">Zobacz demo</a>
+                <p>Parametr <span class="mono">name</span> jest wstrzykiwany do lokalnej strony bez kodowania,
+                    więc skrypt z linku wykonuje się i odczytuje wrażliwe dane z WebView.</p>
+            </div>
         </section>
 
         <section id="hijacking" class="attack">
-            <h2>Deep Link Hijacking</h2>
-            <a class="btn" href="victimapp://reset/confirm?token=DEMO_RESET_TOKEN_123">Zobacz demo</a>
-            <p>Złośliwa aplikacja rejestruje ten sam schemat <span class="mono">victimapp://reset/confirm</span>
-                i po wybraniu jej z okna systemowego przechwytuje link wraz z tokenem.</p>
+            <img class="attack-icon" src="/human_stories.jpeg" alt="">
+            <div class="attack-body">
+                <h2>Deep Link Hijacking</h2>
+                <a class="btn" href="victimapp://reset/confirm?token=DEMO_RESET_TOKEN_123">Zobacz demo</a>
+                <p>Złośliwa aplikacja rejestruje ten sam schemat <span class="mono">victimapp://reset/confirm</span>
+                    i po wybraniu jej z okna systemowego przechwytuje link wraz z tokenem.</p>
+            </div>
         </section>
     </main>
 

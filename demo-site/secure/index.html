@@ -3,19 +3,25 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bezpieczny App Link</title>
+    <title>Jesteś bezpieczny</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dekko&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <main class="container">
-        <div class="banner">⚠️ Strona edukacyjna (projekt studencki).</div>
+    <main class="shop-layout">
+        <div class="shop-form">
+            <h1 class="display">Jesteś bezpieczny</h1>
+            <p class="note">⚠️ Projekt edukacyjny.</p>
+            <p class="muted">To zweryfikowany adres App Linku (<span class="mono">/secure</span>). Jeśli
+                aplikacja VictimApp jest zainstalowana i zweryfikowana, system otworzy ją zamiast przeglądarki
+                — bez okna wyboru. Własność domeny potwierdza plik <span class="mono">assetlinks.json</span>,
+                więc żadna inna aplikacja nie podszyje się pod ten link.</p>
+        </div>
 
-        <h1>Bezpieczny App Link</h1>
-
-        <div class="card">
-            <p>To jest zweryfikowany adres App Linku (<span class="mono">/secure</span>).</p>
-            <p class="muted">Jeśli aplikacja VictimApp jest zainstalowana i zweryfikowana, system otworzy ją
-                zamiast tej strony — bez okna wyboru. Jeśli nie jest, widzisz tę stronę zapasową w przeglądarce.</p>
+        <div class="shop-image">
+            <img src="/wizard.jpeg" alt="Czarodziej">
         </div>
     </main>
 </body>

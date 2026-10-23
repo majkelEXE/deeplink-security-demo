@@ -3,17 +3,22 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ShopDemo — logowanie</title>
+    <title>Sklep z leśnymi stworami</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dekko&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <main class="container">
-        <div class="banner">⚠️ Demonstracja phishingu (edukacyjna). Formularz niczego nie wysyła ani nie zapisuje.</div>
+    <main class="shop-layout">
+        <div class="shop-image">
+            <img src="/gnome.jpeg" alt="Leśny stwór">
+        </div>
 
-        <h1>ShopDemo</h1>
-        <p class="muted">Zaloguj się do swojego konta ShopDemo</p>
+        <div class="shop-form">
+            <h1 class="display">Sklep z leśnymi stworami</h1>
+            <p class="note">⚠️ Demonstracja phishingu (edukacyjna). Formularz niczego nie wysyła ani nie zapisuje.</p>
 
-        <div class="card">
             <form id="loginForm" novalidate>
                 <label for="user">Login lub e-mail</label>
                 <input id="user" name="user" type="text" autocomplete="off">
@@ -21,7 +26,7 @@
                 <label for="pass">Hasło</label>
                 <input id="pass" name="pass" type="password" autocomplete="off">
 
-                <button class="btn" type="submit">Zaloguj się</button>
+                <button class="btn btn--full" type="submit">Zaloguj się</button>
             </form>
             <div id="message" class="message" role="alert"></div>
         </div>

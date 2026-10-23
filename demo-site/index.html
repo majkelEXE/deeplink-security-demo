@@ -4,21 +4,64 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Deep Link Security — demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dekko&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <main class="container">
-        <div class="banner">⚠️ Strona edukacyjna (projekt studencki). Nic nie jest wysyłane ani zapisywane.</div>
+    <header class="topbar">
+        <span class="brand display">Deep Link Security</span>
+    </header>
 
-        <h1>Deep Link Security — demo</h1>
-        <p class="muted">Zaplecze webowe do prezentacji o podatnościach deep linków w Androidzie.</p>
-
-        <div class="card">
-            <h2>Strony</h2>
-            <a class="btn" href="/phishing-demo">Phishing demo (cel Open Redirectu)</a>
-            <a class="btn" href="/secure">Bezpieczny App Link (/secure)</a>
-            <a class="btn" href="/demo-links">Uruchom ataki (awaryjne linki)</a>
+    <section class="hero">
+        <div class="hero-text">
+            <h1 class="display">Podatności deep linków</h1>
+            <p class="lead">Interaktywne demo czterech ataków na deep linki w Androidzie. Wybierz atak
+                po prawej, aby zobaczyć opis i uruchomić demo.</p>
+            <p class="note">⚠️ Projekt edukacyjny. Nic nie jest wysyłane ani zapisywane.</p>
         </div>
+
+        <nav class="hero-blocks">
+            <a class="block block-1" href="#auth-bypass">Auth Bypass</a>
+            <a class="block block-2" href="#open-redirect">Open Redirect</a>
+            <a class="block block-3" href="#webview-xss">WebView XSS</a>
+            <a class="block block-4" href="#hijacking">Deep Link Hijacking</a>
+        </nav>
+    </section>
+
+    <main class="container">
+        <section id="auth-bypass" class="attack">
+            <h2>Auth Bypass</h2>
+            <a class="btn" href="victimapp://account">Zobacz demo</a>
+            <p>Ekran chronionego konta otwierany linkiem <span class="mono">victimapp://account</span>
+                nie sprawdza sesji — pokazuje saldo i numer konta nawet po wylogowaniu.</p>
+        </section>
+
+        <section id="open-redirect" class="attack">
+            <h2>Open Redirect</h2>
+            <a class="btn" href="victimapp://redirect?url=https%3A%2F%2Fdeeplink-security-demo.vercel.app%2Fphishing-demo">Zobacz demo</a>
+            <p>Link <span class="mono">victimapp://redirect?url=…</span> przekazuje dowolny adres do
+                przeglądarki bez walidacji — tak użytkownik trafia na podstawioną stronę logowania.</p>
+        </section>
+
+        <section id="webview-xss" class="attack">
+            <h2>WebView XSS</h2>
+            <a class="btn" href="victimapp://xss?name=%3Cimg%20src%3Dx%20onerror%3D%22alert(document.getElementById('secret').textContent)%22%3E">Zobacz demo</a>
+            <p>Parametr <span class="mono">name</span> jest wstrzykiwany do lokalnej strony bez kodowania,
+                więc skrypt z linku wykonuje się i odczytuje wrażliwe dane z WebView.</p>
+        </section>
+
+        <section id="hijacking" class="attack">
+            <h2>Deep Link Hijacking</h2>
+            <a class="btn" href="victimapp://reset/confirm?token=DEMO_RESET_TOKEN_123">Zobacz demo</a>
+            <p>Złośliwa aplikacja rejestruje ten sam schemat <span class="mono">victimapp://reset/confirm</span>
+                i po wybraniu jej z okna systemowego przechwytuje link wraz z tokenem.</p>
+        </section>
     </main>
+
+    <footer>
+        Projekt przygotowany przez: Michała D, Mateusza Z, Piotra R
+    </footer>
 </body>
 </html>

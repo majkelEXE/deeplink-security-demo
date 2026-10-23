@@ -41,6 +41,22 @@
                     android:host="account" />
             </intent-filter>
         </activity>
+
+        <!-- Open Redirect: forwards victimapp://redirect?url=... to an external browser. -->
+        <activity
+            android:name=".RedirectActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:scheme="victimapp"
+                    android:host="redirect" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

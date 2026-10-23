@@ -36,4 +36,13 @@
     <string name="account_session_ok">Sesja aktywna: zalogowano jako %1$s</string>
     <string name="account_session_bypass">UWAGA: dostęp do chronionych danych uzyskany BEZ logowania (Auth Bypass).</string>
     <string name="account_requires_login">Zaloguj się, aby otworzyć chronione konto</string>
+
+    <!-- Redirect screen (Open Redirect) -->
+    <string name="redirect_title">Przekierowanie</string>
+    <string name="redirect_explanation">Aplikacja otrzymała adres w parametrze „url" i otwiera go w zewnętrznej przeglądarce BEZ żadnej walidacji.</string>
+    <string name="redirect_url_label">Odebrany adres (url):</string>
+    <string name="redirect_open">Otwórz w przeglądarce</string>
+    <string name="redirect_no_url">Brak parametru „url" w linku.</string>
+    <string name="redirect_no_app">Brak aplikacji do otwarcia tego adresu.</string>
+    <string name="redirect_note">To jest Open Redirect: złośliwy link może wysłać użytkownika na dowolną stronę, np. phishing.</string>
 </resources>

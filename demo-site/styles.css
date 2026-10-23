@@ -1,0 +1,117 @@
+:root {
+    --bg: #f7f8fa;
+    --surface: #ffffff;
+    --text: #1a1a1a;
+    --muted: #5f6368;
+    --accent: #1565c0;
+    --danger: #c62828;
+    --danger-bg: #ffebee;
+    --success: #2e7d32;
+    --border: #e3e6ea;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #121316;
+        --surface: #1e2024;
+        --text: #e8eaed;
+        --muted: #9aa0a6;
+        --accent: #64b5f6;
+        --danger: #ef9a9a;
+        --danger-bg: #3a1f22;
+        --success: #81c784;
+        --border: #2b2e33;
+    }
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: -apple-system, system-ui, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 24px 16px 48px;
+}
+
+.banner {
+    background: var(--danger-bg);
+    color: var(--danger);
+    border: 1px solid var(--danger);
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-size: 14px;
+    margin-bottom: 24px;
+}
+
+h1 { font-size: 26px; margin: 0 0 8px; }
+h2 { font-size: 19px; margin: 0 0 8px; }
+p { margin: 0 0 12px; }
+.muted { color: var(--muted); }
+
+.card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+}
+
+a.btn, button.btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: var(--accent);
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+code, .mono {
+    font-family: ui-monospace, Menlo, Consolas, monospace;
+    font-size: 13px;
+    word-break: break-all;
+    color: var(--muted);
+}
+
+label {
+    display: block;
+    font-size: 13px;
+    color: var(--muted);
+    margin: 12px 0 4px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface);
+    color: var(--text);
+    font-size: 15px;
+}
+
+.message {
+    margin-top: 16px;
+    padding: 14px;
+    border-radius: 10px;
+    background: var(--danger-bg);
+    color: var(--danger);
+    border: 1px solid var(--danger);
+    font-size: 14px;
+    display: none;
+}
+
+.message.show { display: block; }

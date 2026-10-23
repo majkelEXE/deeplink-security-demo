@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ShopDemo — logowanie</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <main class="container">
+        <div class="banner">⚠️ Demonstracja phishingu (edukacyjna). Formularz niczego nie wysyła ani nie zapisuje.</div>
+
+        <h1>ShopDemo</h1>
+        <p class="muted">Zaloguj się do swojego konta ShopDemo</p>
+
+        <div class="card">
+            <form id="loginForm" novalidate>
+                <label for="user">Login lub e-mail</label>
+                <input id="user" name="user" type="text" autocomplete="off">
+
+                <label for="pass">Hasło</label>
+                <input id="pass" name="pass" type="password" autocomplete="off">
+
+                <button class="btn" type="submit">Zaloguj się</button>
+            </form>
+            <div id="message" class="message" role="alert"></div>
+        </div>
+    </main>
+
+    <script>
+        // Educational only: never send, store or log the entered data.
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            var msg = document.getElementById('message');
+            msg.textContent = 'To była demonstracja phishingu. W prawdziwym ataku wpisane dane trafiłyby do atakującego.';
+            msg.classList.add('show');
+        });
+    </script>
+</body>
+</html>

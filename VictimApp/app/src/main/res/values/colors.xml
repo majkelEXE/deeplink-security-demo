@@ -1,5 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Base -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Backgrounds and surfaces (light, minimal theme) -->
+    <color name="background">#FFF7F8FA</color>
+    <color name="surface">#FFFFFFFF</color>
+
+    <!-- Text -->
+    <color name="text_primary">#FF1A1A1A</color>
+    <color name="text_secondary">#FF5F6368</color>
+
+    <!-- Accent / app brand -->
+    <color name="accent">#FF1565C0</color>
+    <color name="accent_light">#FFE3F2FD</color>
+
+    <!-- Semantic: success (green) -->
+    <color name="success">#FF2E7D32</color>
+    <color name="success_light">#FFE8F5E9</color>
+
+    <!-- Semantic: attack / error (red) -->
+    <color name="danger">#FFC62828</color>
+    <color name="danger_light">#FFFFEBEE</color>
+
+    <!-- Semantic: warning (amber) -->
+    <color name="warning">#FFF9A825</color>
+    <color name="warning_light">#FFFFF8E1</color>
 </resources>

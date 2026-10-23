@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">VictimApp</string>
+
+    <!-- Base / shared strings -->
+    <string name="educational_disclaimer">Projekt edukacyjny. Wszystkie dane, konta i tokeny są fikcyjne.</string>
+    <string name="action_ok">OK</string>
+    <string name="action_cancel">Anuluj</string>
+    <string name="action_close">Zamknij</string>
+    <string name="action_back">Wstecz</string>
 </resources>

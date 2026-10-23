@@ -7,4 +7,19 @@
     <string name="action_cancel">Anuluj</string>
     <string name="action_close">Zamknij</string>
     <string name="action_back">Wstecz</string>
+
+    <!-- Main screen -->
+    <string name="main_subtitle">Aplikacja demonstracyjna (celowo podatna)</string>
+    <string name="status_logged_out">Nie jesteś zalogowany</string>
+    <string name="status_logged_in">Zalogowano jako: %1$s</string>
+    <string name="action_login">Zaloguj</string>
+    <string name="action_logout">Wyloguj</string>
+
+    <!-- Login screen -->
+    <string name="login_title">Logowanie</string>
+    <string name="hint_username">Login</string>
+    <string name="hint_password">Hasło</string>
+    <string name="login_demo_hint">Dane demonstracyjne: student / demo123</string>
+    <string name="login_error">Nieprawidłowy login lub hasło</string>
+    <string name="toast_logged_in">Zalogowano</string>
 </resources>

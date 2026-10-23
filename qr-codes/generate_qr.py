@@ -20,6 +20,11 @@ import qrcode
 
 DEFAULT_BASE_URL = "https://deeplink-security-demo.vercel.app"
 
+# GitHub Releases location for the downloadable APKs (used by the download QR codes).
+# Generate these QRs only after the release exists, or they point to 404.
+GITHUB_REPO = "majkelEXE/deeplink-security-demo"
+RELEASE_TAG = os.environ.get("RELEASE_TAG", "v1.0")
+
 # The XSS payload is executed locally by VictimApp; here it is only percent-encoded.
 XSS_PAYLOAD = "<img src=x onerror=\"alert(document.getElementById('secret').textContent)\">"
 
@@ -36,6 +41,8 @@ def build_targets(base_url):
         "qr_hijacking": "victimapp://reset/confirm?" + urlencode({"token": "DEMO_RESET_TOKEN_123"}, quote_via=quote),
         "qr_secure_app_link": f"{base_url}/secure",
         "qr_demo_links": f"{base_url}/demo-links",
+        "qr_victimapp_apk": f"https://github.com/{GITHUB_REPO}/releases/download/{RELEASE_TAG}/VictimApp.apk",
+        "qr_attackerapp_apk": f"https://github.com/{GITHUB_REPO}/releases/download/{RELEASE_TAG}/AttackerApp.apk",
     }
 
 

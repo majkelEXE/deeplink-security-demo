@@ -14,6 +14,7 @@
     <string name="status_logged_in">Zalogowano jako: %1$s</string>
     <string name="action_login">Zaloguj</string>
     <string name="action_logout">Wyloguj</string>
+    <string name="action_open_account">Chronione konto</string>
 
     <!-- Login screen -->
     <string name="login_title">Logowanie</string>
@@ -22,4 +23,17 @@
     <string name="login_demo_hint">Dane demonstracyjne: student / demo123</string>
     <string name="login_error">Nieprawidłowy login lub hasło</string>
     <string name="toast_logged_in">Zalogowano</string>
+
+    <!-- Account screen (Auth Bypass) -->
+    <string name="account_title">Chronione konto</string>
+    <string name="account_subtitle">Dane powinny być dostępne tylko dla zalogowanych użytkowników</string>
+    <string name="account_owner_label">Właściciel</string>
+    <string name="account_owner_value">Jan Kowalski (demo)</string>
+    <string name="account_number_label">Numer konta</string>
+    <string name="account_number_value">PL00 0000 0000 0000 0000 TEST</string>
+    <string name="account_balance_label">Saldo</string>
+    <string name="account_balance_value">12 345,67 zł</string>
+    <string name="account_session_ok">Sesja aktywna: zalogowano jako %1$s</string>
+    <string name="account_session_bypass">UWAGA: dostęp do chronionych danych uzyskany BEZ logowania (Auth Bypass).</string>
+    <string name="account_requires_login">Zaloguj się, aby otworzyć chronione konto</string>
 </resources>

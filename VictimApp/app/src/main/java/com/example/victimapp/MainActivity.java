@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,7 +16,7 @@ import com.google.android.material.button.MaterialButton;
 
 public class MainActivity extends AppCompatActivity {
 
-    // Simple session store, also read/written by LoginActivity.
+    // Simple session store, also read/written by LoginActivity and AccountActivity.
     static final String PREFS = "session";
     static final String KEY_LOGGED_IN = "logged_in";
     static final String KEY_USERNAME = "username";
@@ -37,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
         status = findViewById(R.id.textStatus);
         sessionButton = findViewById(R.id.buttonSession);
         sessionButton.setOnClickListener(v -> onSessionButtonClicked());
+
+        MaterialButton accountButton = findViewById(R.id.buttonAccount);
+        accountButton.setOnClickListener(v -> onOpenAccountClicked());
     }
 
     @Override
@@ -54,6 +58,18 @@ public class MainActivity extends AppCompatActivity {
             refreshSessionUi();
         } else {
             // Logged out -> open the login screen.
+            startActivity(new Intent(this, LoginActivity.class));
+        }
+    }
+
+    private void onOpenAccountClicked() {
+        // Safe path: verify the session before opening the protected screen.
+        // (AccountActivity itself does NOT check it, which is the demonstrated flaw.)
+        SharedPreferences prefs = getSharedPreferences(PREFS, MODE_PRIVATE);
+        if (prefs.getBoolean(KEY_LOGGED_IN, false)) {
+            startActivity(new Intent(this, AccountActivity.class));
+        } else {
+            Toast.makeText(this, R.string.account_requires_login, Toast.LENGTH_SHORT).show();
             startActivity(new Intent(this, LoginActivity.class));
         }
     }

@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">AttackerApp</string>
+
+    <!-- Hijack (captured) state -->
+    <string name="hacked_title">HACKED!</string>
+    <string name="hacked_subtitle">Przechwycono Deep Link:</string>
+    <string name="captured_uri_label">Przechwycony adres (URI):</string>
+    <string name="captured_token_label">Przechwycony token:</string>
+    <string name="no_token">(brak tokenu)</string>
+
+    <!-- Idle state (opened from launcher) -->
+    <string name="attacker_idle_title">AttackerApp</string>
+    <string name="attacker_idle_subtitle">Czeka na przechwycenie deep linku…</string>
 </resources>

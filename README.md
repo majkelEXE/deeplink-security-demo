@@ -94,6 +94,21 @@ adb shell am start -a android.intent.action.VIEW -d "victimapp://reset/confirm?t
 
 Gdy aparat nie otwiera własnych schematów URI, użyj strony `<DEMO_BASE_URL>/demo-links`.
 
+## Strony demo-site (adresy)
+
+Strony `/phishing-demo` i `/secure` nie są podlinkowane ze strony głównej (są celami demo,
+nie częścią nawigacji). W razie potrzeby wpisz adres ręcznie w przeglądarce:
+
+| Adres | Rola |
+| --- | --- |
+| `<DEMO_BASE_URL>/` | strona główna — opis ataków + „Zobacz demo" |
+| `<DEMO_BASE_URL>/phishing-demo` | fałszywy „Sklep z leśnymi stworami" (cel Open Redirectu) |
+| `<DEMO_BASE_URL>/secure` | strona zweryfikowanego App Linku |
+| `<DEMO_BASE_URL>/demo-links` | awaryjne linki `victimapp://` do wszystkich scenariuszy |
+
+Strona główna wymaga obrazków `demo-site/gnome.jpeg` (sklep) i `demo-site/wizard.jpeg`
+(strona secure).
+
 ## Wdrożenie demo-site i weryfikacja App Links
 
 Sam wpis `autoVerify="true"` w manifeście **nie wystarcza** — potrzebny jest hosting.

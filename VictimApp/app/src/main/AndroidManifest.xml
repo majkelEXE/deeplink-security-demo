@@ -98,6 +98,24 @@
                     android:path="/confirm" />
             </intent-filter>
         </activity>
+
+        <!-- Good practice (Android App Links): verified HTTPS link cannot be hijacked.
+             Host must match the deployed demo-site domain and its assetlinks.json. -->
+        <activity
+            android:name=".SecureActivity"
+            android:exported="true">
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:scheme="https"
+                    android:host="deeplink-security-demo.vercel.app"
+                    android:pathPrefix="/secure" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

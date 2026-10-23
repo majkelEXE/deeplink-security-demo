@@ -80,4 +80,11 @@
     <string name="safe_applink_button">Otwórz bezpieczny App Link</string>
     <string name="safe_applink_no_app">Brak aplikacji do otwarcia adresu.</string>
     <string name="safe_note">App Links chronią tylko przed przejęciem linku (hijacking). Nie naprawiają Auth Bypass, Open Redirect ani XSS — te wymagają osobnych zabezpieczeń.</string>
+
+    <!-- Secure screen (Android App Links target) -->
+    <string name="secure_title">Zweryfikowany App Link</string>
+    <string name="secure_explanation">Ten ekran otwierają wyłącznie zweryfikowane Android App Links (HTTPS + autoVerify).</string>
+    <string name="secure_url_label">Otwarty adres:</string>
+    <string name="secure_no_url">Otwarto bez adresu (uruchomienie bezpośrednie).</string>
+    <string name="secure_note">Własność domeny potwierdza plik assetlinks.json, więc inna aplikacja nie przejmie tego linku — brak okna wyboru.</string>
 </resources>

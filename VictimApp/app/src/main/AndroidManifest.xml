@@ -76,6 +76,23 @@
                     android:host="xss" />
             </intent-filter>
         </activity>
+
+        <!-- Deep Link Hijacking target: AttackerApp registers the same filter. -->
+        <activity
+            android:name=".ResetConfirmActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:scheme="victimapp"
+                    android:host="reset"
+                    android:path="/confirm" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

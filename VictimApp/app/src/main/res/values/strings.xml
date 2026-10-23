@@ -49,4 +49,12 @@
     <!-- XSS screen (WebView XSS) -->
     <string name="xss_default_name">Gość</string>
     <string name="xss_template_error">Nie udało się wczytać szablonu profilu.</string>
+
+    <!-- Reset confirm screen (Deep Link Hijacking target) -->
+    <string name="reset_title">Reset hasła</string>
+    <string name="reset_explanation">Otrzymano żądanie zmiany hasła. Potwierdź, aby ustawić nowe hasło.</string>
+    <string name="reset_token_label">Token resetu:</string>
+    <string name="reset_confirm">Potwierdź reset</string>
+    <string name="reset_no_token">Brak tokenu w linku.</string>
+    <string name="reset_done">Hasło zostało zresetowane (demo).</string>
 </resources>

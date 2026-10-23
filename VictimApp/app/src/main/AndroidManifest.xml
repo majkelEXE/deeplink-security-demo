@@ -29,6 +29,11 @@
             android:name=".LoginActivity"
             android:exported="false" />
 
+        <!-- Secure variants of all four scenarios; opened from the home screen only. -->
+        <activity
+            android:name=".SafeDemoActivity"
+            android:exported="false" />
+
         <!-- Auth Bypass: reachable via victimapp://account with no session check. -->
         <activity
             android:name=".AccountActivity"

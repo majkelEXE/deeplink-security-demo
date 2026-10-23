@@ -41,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
 
         MaterialButton accountButton = findViewById(R.id.buttonAccount);
         accountButton.setOnClickListener(v -> onOpenAccountClicked());
+
+        MaterialButton safeButton = findViewById(R.id.buttonSafe);
+        safeButton.setOnClickListener(v -> startActivity(new Intent(this, SafeDemoActivity.class)));
     }
 
     @Override

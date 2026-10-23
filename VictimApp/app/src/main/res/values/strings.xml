@@ -15,6 +15,7 @@
     <string name="action_login">Zaloguj</string>
     <string name="action_logout">Wyloguj</string>
     <string name="action_open_account">Chronione konto</string>
+    <string name="action_safe_versions">Bezpieczne wersje</string>
 
     <!-- Login screen -->
     <string name="login_title">Logowanie</string>
@@ -57,4 +58,26 @@
     <string name="reset_confirm">Potwierdź reset</string>
     <string name="reset_no_token">Brak tokenu w linku.</string>
     <string name="reset_done">Hasło zostało zresetowane (demo).</string>
+
+    <!-- Safe demo screen (secure variants) -->
+    <string name="safe_title">Bezpieczne wersje</string>
+    <string name="safe_subtitle">Jak poprawnie obsłużyć te same dane i linki</string>
+    <string name="safe_account_heading">Kontrola sesji</string>
+    <string name="safe_account_desc">Chroniony ekran sprawdza sesję, zanim pokaże dane.</string>
+    <string name="safe_account_button">Bezpieczne konto</string>
+    <string name="safe_account_ok">Dostęp przyznany. Saldo: 12 345,67 zł</string>
+    <string name="safe_account_blocked">Brak aktywnej sesji — dostęp zablokowany.</string>
+    <string name="safe_redirect_heading">Allowlista przekierowań</string>
+    <string name="safe_redirect_desc">Dozwolony jest tylko dokładny host example.com po HTTPS.</string>
+    <string name="safe_redirect_button">Sprawdź podejrzany redirect</string>
+    <string name="safe_redirect_allow">DOZWOLONY</string>
+    <string name="safe_redirect_block">ZABLOKOWANY</string>
+    <string name="safe_xss_heading">Bezpieczne wyświetlanie tekstu</string>
+    <string name="safe_xss_desc">Niezaufany tekst pokazujemy w TextView, nigdy go nie wykonujemy.</string>
+    <string name="safe_xss_button">Pokaż payload bezpiecznie</string>
+    <string name="safe_applink_heading">Zweryfikowane App Links</string>
+    <string name="safe_applink_desc">HTTPS + autoVerify kryptograficznie wiąże link z aplikacją.</string>
+    <string name="safe_applink_button">Otwórz bezpieczny App Link</string>
+    <string name="safe_applink_no_app">Brak aplikacji do otwarcia adresu.</string>
+    <string name="safe_note">App Links chronią tylko przed przejęciem linku (hijacking). Nie naprawiają Auth Bypass, Open Redirect ani XSS — te wymagają osobnych zabezpieczeń.</string>
 </resources>

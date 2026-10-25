@@ -160,6 +160,44 @@ a.btn:hover, button.btn:hover { background: #b36100; }
 
 .btn--full { display: block; width: 100%; text-align: center; margin-top: 16px; }
 
+/* Two actions per attack, each with its deep link printed below the button */
+.btn-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin: 0 0 14px;
+}
+
+.btn-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 220px;
+    min-width: 0;
+}
+
+.btn-group .btn { margin: 0 0 6px; text-align: center; }
+
+.btn-caption {
+    font-family: ui-monospace, Menlo, Consolas, monospace;
+    font-size: 12px;
+    line-height: 1.4;
+    color: var(--muted);
+    word-break: break-all;
+}
+
+/* Safe / normal action: warm amber. Attack action: the deeper accent orange. */
+a.btn--safe {
+    background: var(--amber);
+    color: var(--brown);
+    border: none;
+}
+
+a.btn--safe:hover { background: #d99a00; }
+
+a.btn--attack { background: var(--accent); color: var(--cream); }
+
+a.btn--attack:hover { background: #b36100; }
+
 /* Subtle note */
 .note {
     font-size: 13px;

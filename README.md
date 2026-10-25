@@ -92,7 +92,7 @@ adb shell am start -a android.intent.action.VIEW -d "victimapp://xss?name=%3Cimg
 adb shell am start -a android.intent.action.VIEW -d "victimapp://reset/confirm?token=DEMO_RESET_TOKEN_123"
 ```
 
-Gdy aparat nie otwiera własnych schematów URI, użyj strony `<DEMO_BASE_URL>/demo-links`.
+Gdy aparat nie otwiera własnych schematów URI, otwórz stronę główną `<DEMO_BASE_URL>/` i użyj przycisków „Zobacz demo".
 
 ## Strony demo-site (adresy)
 
@@ -101,10 +101,9 @@ nie częścią nawigacji). W razie potrzeby wpisz adres ręcznie w przeglądarce
 
 | Adres | Rola |
 | --- | --- |
-| `<DEMO_BASE_URL>/` | strona główna — opis ataków + „Zobacz demo" |
+| `<DEMO_BASE_URL>/` | strona główna — opis ataków + przyciski „Zobacz demo" (także wariant awaryjny) |
 | `<DEMO_BASE_URL>/phishing-demo` | fałszywy „Sklep z leśnymi stworami" (cel Open Redirectu) |
 | `<DEMO_BASE_URL>/secure` | strona zweryfikowanego App Linku |
-| `<DEMO_BASE_URL>/demo-links` | awaryjne linki `victimapp://` do wszystkich scenariuszy |
 
 Strona główna wymaga obrazków `demo-site/gnome.jpeg` (sklep) i `demo-site/wizard.jpeg`
 (strona secure).

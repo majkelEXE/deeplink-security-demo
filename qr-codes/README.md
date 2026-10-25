@@ -24,8 +24,16 @@ i strony awaryjnej.
 | `qr_hijacking.png` | `victimapp://reset/confirm?token=DEMO_RESET_TOKEN_123` |
 | `qr_secure_app_link.png` | `<DEMO_BASE_URL>/secure` |
 | `qr_demo_links.png` | `<DEMO_BASE_URL>/` (strona główna — wszystkie ataki z przyciskami „Zobacz demo") |
+| `qr_home_deeplink.png` | `victimapp://home` (zwykły, poprawny deep link do ekranu głównego — „tak działa normalny kod QR") |
+| `qr_open_redirect_benign.png` | `victimapp://redirect?url=<BENIGN_REDIRECT_URL>` (ten sam mechanizm co atak, ale cel to nasza własna strona, a nie phishing) |
+| `qr_xss_benign.png` | `victimapp://xss?name=Michał Kowalski` (normalna wartość parametru — profil renderuje się bez ataku) |
 
-Kody `auth_bypass`, `webview_xss` i `hijacking` nie zależą od domeny.
+Kody `auth_bypass`, `webview_xss`, `hijacking`, `home_deeplink` i `xss_benign` nie zależą od domeny.
+`open_redirect_benign` domyślnie celuje w `<DEMO_BASE_URL>/`; aby wskazać inną stronę, ustaw
+`BENIGN_REDIRECT_URL` (np. `BENIGN_REDIRECT_URL=https://moja-strona.pl python3 generate_qr.py`).
+
+> Trzy kody `*_benign` / `home_deeplink` pokazują „jak to wygląda bez ataku" — przydatne jako
+> kontrast obok wersji podatnych na tej samej prezentacji.
 
 ## Wariant awaryjny
 

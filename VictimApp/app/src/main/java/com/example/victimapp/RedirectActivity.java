@@ -51,6 +51,57 @@ public class RedirectActivity extends AppCompatActivity {
         openInBrowser();
     }
 
+    // ---------------------------------------------------------------------------
+    // SAFE variant (for presentation screenshots).
+    // To capture the "blocked" state: comment out the vulnerable onCreate above and
+    // uncomment this whole block (onCreate + isAllowedRedirect). Keep ONE onCreate.
+    // ---------------------------------------------------------------------------
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        EdgeToEdge.enable(this);
+//        setContentView(R.layout.activity_redirect);
+//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+//            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+//            return insets;
+//        });
+//
+//        TextView urlView = findViewById(R.id.textUrl);
+//        MaterialButton openButton = findViewById(R.id.buttonOpen);
+//
+//        Uri data = getIntent().getData();
+//        targetUrl = data != null ? data.getQueryParameter("url") : null;
+//
+//        if (targetUrl == null || targetUrl.isEmpty()) {
+//            urlView.setText(R.string.redirect_no_url);
+//            openButton.setEnabled(false);
+//            return;
+//        }
+//
+//        urlView.setText(targetUrl);
+//
+//        // DEFENSE (Open Redirect fixed): open only URLs that pass the allowlist.
+//        if (isAllowedRedirect(targetUrl)) {
+//            openButton.setOnClickListener(v -> openInBrowser());
+//            openInBrowser();
+//        } else {
+//            openButton.setEnabled(false);
+//            Toast.makeText(this, R.string.redirect_blocked, Toast.LENGTH_LONG).show();
+//        }
+//    }
+//
+//    // DEFENSE: strict allowlist — HTTPS only, exact host, no userinfo, default/443 port.
+//    // No contains()/endsWith(): those would accept subdomain and suffix traps.
+//    private boolean isAllowedRedirect(String rawUrl) {
+//        Uri uri = Uri.parse(rawUrl);
+//        if (!"https".equals(uri.getScheme())) return false;
+//        if (uri.getUserInfo() != null) return false;
+//        if (!"example.com".equals(uri.getHost())) return false;
+//        int port = uri.getPort();
+//        return port == -1 || port == 443;
+//    }
+
     private void openInBrowser() {
         try {
             startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(targetUrl)));

@@ -76,6 +76,55 @@ public class XssActivity extends AppCompatActivity {
         webView.loadDataWithBaseURL("https://victim.example/", html, "text/html", "UTF-8", null);
     }
 
+    // ---------------------------------------------------------------------------
+    // SAFE variant (for presentation screenshots).
+    // To capture the "fixed" state: comment out the vulnerable onCreate above and
+    // uncomment this whole block (onCreate + escapeHtml). Keep ONE onCreate.
+    // ---------------------------------------------------------------------------
+//    @SuppressLint("SetJavaScriptEnabled")
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        EdgeToEdge.enable(this);
+//        setContentView(R.layout.activity_xss);
+//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+//            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+//            return insets;
+//        });
+//
+//        WebView webView = findViewById(R.id.webview);
+//        webView.getSettings().setJavaScriptEnabled(true);
+//
+//        String name = null;
+//        if (getIntent().getData() != null) {
+//            name = getIntent().getData().getQueryParameter("name");
+//        }
+//        if (name == null || name.isEmpty()) {
+//            name = getString(R.string.xss_default_name);
+//        }
+//
+//        String html;
+//        try {
+//            // DEFENSE (WebView XSS fixed): HTML-encode the untrusted value before
+//            // injecting it, so any markup becomes inert text instead of executing.
+//            html = readAsset("profile.html").replace("{{NAME}}", escapeHtml(name));
+//        } catch (IOException e) {
+//            Toast.makeText(this, R.string.xss_template_error, Toast.LENGTH_SHORT).show();
+//            return;
+//        }
+//        webView.loadDataWithBaseURL("https://victim.example/", html, "text/html", "UTF-8", null);
+//    }
+//
+//    // DEFENSE: minimal HTML entity encoding for untrusted text.
+//    private String escapeHtml(String s) {
+//        return s.replace("&", "&amp;")
+//                .replace("<", "&lt;")
+//                .replace(">", "&gt;")
+//                .replace("\"", "&quot;")
+//                .replace("'", "&#39;");
+//    }
+
     private String readAsset(String fileName) throws IOException {
         try (InputStream is = getAssets().open(fileName);
              BufferedReader reader = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8))) {

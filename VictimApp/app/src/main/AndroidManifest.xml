@@ -23,6 +23,19 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+            <!-- Plain, legitimate deep link to the home screen: victimapp://home
+                 (shown as the harmless baseline next to the vulnerable deep links). -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:scheme="victimapp"
+                    android:host="home" />
+            </intent-filter>
         </activity>
 
         <activity

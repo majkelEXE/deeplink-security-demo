@@ -35,7 +35,16 @@
             <img class="attack-icon" src="/pumpkin.jpeg" alt="">
             <div class="attack-body">
                 <h2>Auth Bypass</h2>
-                <a class="btn" href="victimapp://account">Zobacz demo</a>
+                <div class="btn-row">
+                    <div class="btn-group">
+                        <a class="btn btn--safe" href="victimapp://home">Zwykły deep link</a>
+                        <span class="btn-caption">victimapp://home</span>
+                    </div>
+                    <div class="btn-group">
+                        <a class="btn btn--attack" href="victimapp://account">Atak: Auth Bypass</a>
+                        <span class="btn-caption">victimapp://account</span>
+                    </div>
+                </div>
                 <p>Ekran chronionego konta otwierany linkiem <span class="mono">victimapp://account</span>
                     nie sprawdza sesji — pokazuje saldo i numer konta nawet po wylogowaniu.</p>
             </div>
@@ -45,7 +54,16 @@
             <img class="attack-icon" src="/cat_guitarist.jpeg" alt="">
             <div class="attack-body">
                 <h2>Open Redirect</h2>
-                <a class="btn" href="victimapp://redirect?url=https%3A%2F%2Fdeeplink-security-demo.vercel.app%2Fphishing-demo">Zobacz demo</a>
+                <div class="btn-row">
+                    <div class="btn-group">
+                        <a class="btn btn--safe" href="victimapp://redirect?url=https%3A%2F%2Fdeeplink-security-demo.vercel.app%2F">Nasza strona</a>
+                        <span class="btn-caption">victimapp://redirect?url=https://deeplink-security-demo.vercel.app/</span>
+                    </div>
+                    <div class="btn-group">
+                        <a class="btn btn--attack" href="victimapp://redirect?url=https%3A%2F%2Fdeeplink-security-demo.vercel.app%2Fphishing-demo">Atak: phishing</a>
+                        <span class="btn-caption">victimapp://redirect?url=https://deeplink-security-demo.vercel.app/phishing-demo</span>
+                    </div>
+                </div>
                 <p>Link <span class="mono">victimapp://redirect?url=…</span> przekazuje dowolny adres do
                     przeglądarki bez walidacji — tak użytkownik trafia na podstawioną stronę logowania.</p>
             </div>
@@ -55,7 +73,16 @@
             <img class="attack-icon" src="/demon.jpeg" alt="">
             <div class="attack-body">
                 <h2>WebView XSS</h2>
-                <a class="btn" href="victimapp://xss?name=%3Cimg%20src%3Dx%20onerror%3D%22alert(document.getElementById('secret').textContent)%22%3E">Zobacz demo</a>
+                <div class="btn-row">
+                    <div class="btn-group">
+                        <a class="btn btn--safe" href="victimapp://xss?name=Micha%C5%82%20Kowalski">Zwykłe imię</a>
+                        <span class="btn-caption">victimapp://xss?name=Michał Kowalski</span>
+                    </div>
+                    <div class="btn-group">
+                        <a class="btn btn--attack" href="victimapp://xss?name=%3Cimg%20src%3Dx%20onerror%3D%22alert(document.getElementById('secret').textContent)%22%3E">Atak: XSS</a>
+                        <span class="btn-caption">victimapp://xss?name=&lt;img src=x onerror="alert(document.getElementById('secret').textContent)"&gt;</span>
+                    </div>
+                </div>
                 <p>Parametr <span class="mono">name</span> jest wstrzykiwany do lokalnej strony bez kodowania,
                     więc skrypt z linku wykonuje się i odczytuje wrażliwe dane z WebView.</p>
             </div>
@@ -65,7 +92,16 @@
             <img class="attack-icon" src="/human_stories.jpeg" alt="">
             <div class="attack-body">
                 <h2>Deep Link Hijacking</h2>
-                <a class="btn" href="victimapp://reset/confirm?token=DEMO_RESET_TOKEN_123">Zobacz demo</a>
+                <div class="btn-row">
+                    <div class="btn-group">
+                        <a class="btn btn--safe" href="https://deeplink-security-demo.vercel.app/secure">Bezpiecznie: App Link</a>
+                        <span class="btn-caption">https://deeplink-security-demo.vercel.app/secure</span>
+                    </div>
+                    <div class="btn-group">
+                        <a class="btn btn--attack" href="victimapp://reset/confirm?token=DEMO_RESET_TOKEN_123">Podatny link (reset)</a>
+                        <span class="btn-caption">victimapp://reset/confirm?token=DEMO_RESET_TOKEN_123</span>
+                    </div>
+                </div>
                 <p>Złośliwa aplikacja rejestruje ten sam schemat <span class="mono">victimapp://reset/confirm</span>
                     i po wybraniu jej z okna systemowego przechwytuje link wraz z tokenem.</p>
             </div>
